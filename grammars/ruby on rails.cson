@@ -12,6 +12,9 @@
 'foldingStopMarker': '(?x)\n\t\t(   (^|;) \\s*+ end   \\s*+ ([#].*)? $\n\t\t|   ^     \\s*+ [}\\]] \\s*+ ([#].*)? $\n\t\t|   [#] .*? \\(end\\) \\s*+ $    # Sune’s special marker\n\t\t)'
 'patterns': [
   {
+    'include': 'source.ruby'
+  }
+  {
     'begin': '(^\\s*)(?=class\\s+(([.a-zA-Z0-9_:]+ControllerTest(\\s*<\\s*[.a-zA-Z0-9_:]+)?)))'
     'comment': 'Uses lookahead to match classes with the ControllerTest suffix; includes \'source.ruby\' to avoid infinite recursion'
     'end': '^\\1(?=end)\\b'
@@ -187,8 +190,5 @@
   {
     'match': '\\b(alias_method_chain|alias_attribute|delegate|cattr_accessor|mattr_accessor|returning|memoize)\\b'
     'name': 'support.function.activesupport.rails'
-  }
-  {
-    'include': 'source.ruby'
   }
 ]
